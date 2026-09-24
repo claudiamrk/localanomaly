@@ -45,10 +45,6 @@ The expected input is therefore a dataframe that has a date column in this POSIX
 The function will stop and return the relevant error for any non numerical input or if there is no time date included, 
 in the incorrect format or insufficient amount of observations. 
 
-find_neighbours() and local_statistics() are designed to receive the validated outputs 
-from the functions in the workflow before it. Therefore, invalid raw input formats are not expected at this stage,
-as input validation is handled by clean_data()
-
 2. find_neighbours():
 Purpose:
 Finds the neighbouring observations for each observation in the time series. 
@@ -75,5 +71,20 @@ How to check:
 local_statistics(data, neighbours)
 
 The function should return the calculated local statistics for each observation.
+
+4. calculate_scores():
+Purpose: Find the anomaly score for each observation compared to its neighbours to determine whether
+the point is an anomaly or not using the observed value, local mean and local standard deviation.
+
+How to check:
+
+calculate_scores(data, local_stats)
+
+The function should return an anomaly score for each observation.
+
+find_neighbours(), local_statistics and calculate_scores() are designed to receive the validated data and values produced by the preceding steps in the package workflow. 
+Therefore, invalid raw input formats are not expected to be tested for this function, as input validation is handled earlier by clean_data().
+
+
 
 
