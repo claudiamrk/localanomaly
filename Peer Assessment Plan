@@ -1,0 +1,53 @@
+**Local Anomaly Detection and Classification**
+
+Purpose: The purpose of this package is to identify and classify anomalies in time series data. 
+
+Installation:
+1. Clone this gitHub repostiory by:
+git clone https://github.com/claudiamrk/localanomaly.git 
+
+Install the package using:
+devtools::install()
+
+Then load the package:
+library(localanomaly)
+
+Required Input
+
+The package is designed for time-series data containing:
+
+time: the time/date of each observation
+value: the numerical value observed at that time
+
+For example:
+
+time                  value
+2026-01-01 00:00:00   18.2
+2026-01-01 01:00:00   18.5
+2026-01-01 02:00:00   18.7
+
+The specific dates and values are not required; this is an example of the expected structure
+
+Implemented Functions:
+
+1. clean_data():
+
+Purpose:
+
+Cleans and prepares the input time-series data for anomaly detection.
+
+How to check
+
+clean_data(data)
+
+This functions checks that the input is in the correct format which is a date column that is in POSIXct format and 
+has a value corresponding to this date.
+The expected input is therefore a dataframe that has a date column in this POSIXct format and a value for each date.
+The function will stop and return the relevant error for any non numerical input or if there is no time date included, 
+in the incorrect format or insufficient amount of observations. 
+
+2. find_neighbours():
+
+
+
+3. local_statistics():
