@@ -1,4 +1,4 @@
-**Local Anomaly Detection and Classification**
+Local Anomaly Detection and Classification
 
 Purpose: The purpose of this package is to identify and classify anomalies in time series data. 
 
@@ -33,7 +33,6 @@ Implemented Functions:
 1. clean_data():
 
 Purpose:
-
 Cleans and prepares the input time-series data for anomaly detection.
 
 How to check
@@ -46,8 +45,35 @@ The expected input is therefore a dataframe that has a date column in this POSIX
 The function will stop and return the relevant error for any non numerical input or if there is no time date included, 
 in the incorrect format or insufficient amount of observations. 
 
+find_neighbours() and local_statistics() are designed to receive the validated outputs 
+from the functions in the workflow before it. Therefore, invalid raw input formats are not expected at this stage,
+as input validation is handled by clean_data()
+
 2. find_neighbours():
+Purpose:
+Finds the neighbouring observations for each observation in the time series. 
+The number of neighbours is determined based on the size of the input dataset.
 
+How to check:
 
+find_neighbours(data)
+
+The function should return the neighbouring observations for each observation in the dataset.
 
 3. local_statistics():
+
+Purpose:
+Calculates local statistics for each observation based on its neighbouring observations.
+
+The function calculates the local:
+mean
+standard deviation
+minimum
+maximum
+
+How to check:
+local_statistics(data, neighbours)
+
+The function should return the calculated local statistics for each observation.
+
+
