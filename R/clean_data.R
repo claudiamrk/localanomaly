@@ -50,10 +50,9 @@ clean_data<-function(data){ #at this stage i think that data is the input which 
     stop("Insufficient Observations") #using 20 at this stage - might change this
   }
 
-  #check the time is ordered
-  if(any(diff(data$time) < 0)){
-    stop("Time values must be in increasing order")
-  }
+  #instead of checking the time is ordered and making this an input criteria just
+  #order it itself
+  data <- data[order(data$time), ]
 
   return(data)
 }

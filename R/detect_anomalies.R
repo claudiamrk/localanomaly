@@ -1,24 +1,35 @@
-detect_anomalies<-function(){
-  #this is the main function for detecting the anomalies
-  cleaned_data<-clean_data(data)
+detect_anomalies <- function(data) {
+  # Clean the input data
+  cleaned_data <- clean_data(data)
 
-  neighbours<-find_neighbours(cleaned_data)
+  # Find neighbouring observations
+  neighbours <- find_neighbours(cleaned_data)
 
-  statistics<-local_statistics(cleaned,data,neighbours)
+  # Calculate local statistics
+  statistics <- local_statistics(cleaned_data, neighbours)
 
-  scores<-calculate_scores(statistics)
+  # Calculate anomaly scores
+  scores <- calculate_scores(cleaned_data, statistics)
 
-  anomalies<-identify_anomalies(scores)
+  # Identify anomalies
+  anomalies <- identify_anomalies(cleaned_data, scores)
 
-  classified<-classify_anomalies(anomalies)
+  # Classify anomalies
+  classified <- classify_anomalies(
+    anomalies,
+    scores,
+    neighbours
+  )
 
-  plot<-plot_anomalies(cleaned_data,classified)
+  # Create plot
+  plot <- plot_anomalies(classified)
 
-  summary<-summarise_anomalies(classified)
+  # Create summary
+  summary <- summarise_anomalies(classified)
 
   return(list(
-    anomalies=classified,
-    plot=plot,
-    summary=summary
+    anomalies = classified,
+    plot = plot,
+    summary = summary
   ))
 }

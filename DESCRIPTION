@@ -13,6 +13,7 @@ BugReports: https://github.com/claudiamrk/localanomaly/issues
 Suggests: 
     testthat (>= 3.0.0)
 Imports:
+    ggplot2,
     Rcpp
 LinkingTo:
     Rcpp
