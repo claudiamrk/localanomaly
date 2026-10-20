@@ -2,4 +2,10 @@
 
 export(calculate_scores)
 export(find_neighbours)
+importFrom(Rcpp,evalCpp)
+importFrom(stats,
+  mad,
+  median,
+  sd
+)
 useDynLib(localanomaly, .registration = TRUE)
