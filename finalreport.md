@@ -55,6 +55,7 @@ Calculate anomaly scores – calculate_scores():
 The anomaly score was calculated using the formula:
 
 $$z = \frac{x_i - \mu_{\text{local}}}{\sigma_{\text{local}}}$$
+
 This calculates a z score by subtracting the local mean from each observation and dividing this difference by the standard deviation for the neighbourhood. A z score was calculated for each observation relative to its neighbourhood.
 
 Classify Anomalies – classify_anomalies():
