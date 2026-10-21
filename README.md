@@ -15,6 +15,7 @@ The package classifies observations into four categories:
 Install the package from GitHub using remotes:
 
 install.packages("remotes")
+
 remotes::install_github("claudiamrk/localanomaly")
 
 **Load the package:**
@@ -26,6 +27,7 @@ library(localanomaly)
 The package expects a data frame containing two columns:
 
 time: The time stamp for each observation
+
 value: The numeric measurement being analysed
 
 Each observation must have a unique timestamp, and the data must contain at least 20 observations.
