@@ -18,6 +18,7 @@ install.packages("remotes")
 remotes::install_github("claudiamrk/localanomaly")
 
 **Load the package:**
+
 library(localanomaly)
 
 **Input data**
@@ -42,14 +43,18 @@ result<-detect_anomalies(data)
 
 The function returns a list containing three components 
 
-result$anomalies #Data with anomaly scores and classifications 
+result$anomalies #Data with anomaly scores and classifications
+
 result$plot #Anomaly detection plot
+
 result$summary #Summary of detected anomalies
 
 View the plot:
+
 result$plot
 
 View the summary:
+
 result$summary
 
 **Method:**
