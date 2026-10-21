@@ -1,4 +1,10 @@
-
+#' Clean Time Series Data
+#'
+#' Validates and cleans time series data before anomaly detection.
+#'
+#' @param data A data frame containing `time` and `value` columns.
+#' @return A cleaned data frame ready for anomaly detection.
+#' @keywords internal
 clean_data <- function(data) {
 
   # Check that the input exists

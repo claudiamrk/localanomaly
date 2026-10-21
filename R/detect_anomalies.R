@@ -1,3 +1,12 @@
+#' Detect anomalies in a time series
+#'
+#' Runs the complete anomaly detection workflow, including data cleaning,
+#' neighbourhood identification, scoring, classification and visualisation.
+#'
+#' @param data A data frame containing `time` and `value` columns.
+#' @return A list containing the classified anomalies, plot and summary.
+#' @export
+
 detect_anomalies <- function(data) {
   # Clean the input data
   cleaned_data <- clean_data(data)

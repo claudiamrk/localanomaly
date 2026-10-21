@@ -1,6 +1,6 @@
 **Overview**
 
-localannomaly is an R package for detecting and classifying anomalies in time series data. It identifes observations that differ from their local surroundings and detects unusual patterns using a neighbourhood approach.
+localanomaly is an R package for detecting and classifying anomalies in time series data. It identifies observations that differ from their local surroundings and detects unusual patterns using a neighbourhood approach.
 
 The package classifies observations into four categories:
 

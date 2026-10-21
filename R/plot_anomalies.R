@@ -1,5 +1,15 @@
 utils::globalVariables(c("time", "value", "classification"))
 
+#' Plot Detected Anomalies
+#'
+#' Visualises time series observations and highlights detected anomalies.
+#'
+#' @param data A data frame containing `time`, `value`, and `classification` columns.
+#' @param detailed Logical. If `TRUE`, highlights anomalies by classification.
+#'   If `FALSE`, plots only the time series.
+#' @return A ggplot object showing the time series and, optionally, detected anomalies.
+#' @export
+
 plot_anomalies <- function(data, detailed = TRUE) {
   p <- ggplot2::ggplot(data, ggplot2::aes(x = time, y = value)) +
     ggplot2::geom_line() +

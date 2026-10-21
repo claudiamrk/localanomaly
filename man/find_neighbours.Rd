@@ -2,16 +2,16 @@
 % Please edit documentation in R/find_neighbours.R
 \name{find_neighbours}
 \alias{find_neighbours}
-\title{Find local neighbours}
+\title{Find Local Neighbours}
 \usage{
 find_neighbours(data)
 }
 \arguments{
-\item{data}{A data frame containing the observations.}
+\item{data}{A cleaned time series data frame.}
 }
 \value{
-A list containing the neighbour indices for each observation.
+A list of neighbouring observations for each observation.
 }
 \description{
-Finds the nearest neighbours for each observation using C++.
+Identifies neighbouring observations for each time series observation.
 }

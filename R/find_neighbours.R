@@ -1,12 +1,12 @@
 #' @useDynLib localanomaly, .registration = TRUE
 NULL
 
-#' Find local neighbours
+#' Find Local Neighbours
 #'
-#' Finds the nearest neighbours for each observation using C++.
+#' Identifies neighbouring observations for each time series observation.
 #'
-#' @param data A data frame containing the observations.
-#' @return A list containing the neighbour indices for each observation.
+#' @param data A cleaned time series data frame.
+#' @return A list of neighbouring observations for each observation.
 #' @export
 find_neighbours <- function(data) {
   find_neighbours_cpp(nrow(data))

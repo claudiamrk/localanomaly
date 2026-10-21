@@ -1,3 +1,14 @@
+#' Classify Anomalies
+#'
+#' Classifies observations as normal, point, contextual, or collective anomalies.
+#'
+#' @param data A time series data frame.
+#' @param scores Anomaly scores for each observation.
+#' @param neighbours The neighbouring observations for each observation.
+#' @param point_threshold The threshold for identifying point anomalies.
+#' @param contextual_threshold The threshold for identifying contextual anomalies.
+#' @return The data frame with anomaly classifications.
+#' @keywords internal
 #' @importFrom stats mad median sd
 classify_anomalies <- function(data, scores, neighbours, point_threshold=3,
                                contextual_threshold=3.5) {
